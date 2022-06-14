@@ -3,10 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>First Assignment</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" charset="utf-8"></script>
     <script src="app.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body ng-app="Item">
     <h1>First Assignment</h1>
+    <div ng-controller="LunchCheckController">
+      <div >
+          Items: <input style="border: {{outputColor}} 5px solid" type="text" id="userInput" ng-model="items" ng-keypress="enterChecker($event)">
+      </div>
+      <button type="button" ng-click="checker()">Check if too much!</button>
+      <br>
+      <div id="output" style="background-color: {{outputColor}}">
+          {{output}}
+      </div>
+
+    </div>
   </body>
 </html>
